@@ -138,8 +138,8 @@ module.exports = {
         const parts = ownerRepo.split("/");
         const owner = parts[0];
         const repoName = parts[1];
-
-        // Get workflow file and branch from package.json or options, fallback to defaults
+        const ciWorkflow = opts.ciWorkflow ?? pkg.ciWorkflow ?? "ci.yml";
+        const ciBranch = opts.ciBranch ?? pkg.ciBranch ?? "main";
         const ciWorkflow = opts.ciWorkflow || pkg.ciWorkflow || "ci.yml";
         const ciBranch = opts.ciBranch || pkg.ciBranch || "main";
 
