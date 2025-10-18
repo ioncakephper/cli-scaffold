@@ -1,0 +1,25 @@
+{
+  "name": "cli-scaffold",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "docs": "npx markdown-magic@latest README.md --config ./markdown-magic.config.js",
+    "test": "jest --runInBand"
+  },
+  "jest": {
+    "testEnvironment": "node"
+  },
+  "devDependencies": {
+    "cross-spawn": "7.0.6",
+    "jest": "^30.2.0"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "description": "",
+  "dependencies": {
+    "commander": "^14.0.1",
+    "cosmiconfig": "^9.0.0",
+    "minimist": "^1.2.8"
+  }
+}
