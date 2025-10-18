@@ -17,6 +17,14 @@
   "author": "",
   "license": "MIT",
   "description": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ioncakephper/cli-scaffold.git"
+  },
+  "homepage": "https://github.com/ioncakephper/cli-scaffold#readme",
+  "bugs": {
+    "url": "https://github.com/ioncakephper/cli-scaffold/issues"
+  },
   "dependencies": {
     "commander": "^14.0.1",
     "cosmiconfig": "^9.0.0",
