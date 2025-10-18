@@ -2,7 +2,7 @@ name: CI
 
 on:
   push:
-    branches: [ main, master ]
+    branches: [ main ]
   pull_request:
     branches: [ main, master ]
 
@@ -34,3 +34,12 @@ jobs:
         with:
           files: coverage/lcov.info
           fail_ci_if_error: false
+  release-please:
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: google-github-actions/release-please-action@v4.1.1
+        id: release
+        with:
+          release-type: node
+          package-name: cli-scaffold
