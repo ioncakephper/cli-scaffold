@@ -16,17 +16,15 @@ Small CLI scaffold used for examples and tests.
 ## Table of Contents
 
 <!-- doc-gen TOC -->
-- [cli-scaffold](#cli-scaffold)
-  - [Table of Contents](#table-of-contents)
-  - [Running locally](#running-locally)
-  - [Running tests (Jest)](#running-tests-jest)
-  - [CI (GitHub Actions)](#ci-github-actions)
-    - [Optional Codecov upload](#optional-codecov-upload)
-  - [How to open a PR with these changes](#how-to-open-a-pr-with-these-changes)
-  - [Contributing](#contributing)
-  - [License](#license)
-  - [Acknowledgments](#acknowledgments)
-  - [Project Structure](#project-structure)
+- [Running locally](#running-locally)
+- [Running tests (Jest)](#running-tests-jest)
+- [CI (GitHub Actions)](#ci-github-actions)
+  - [Optional Codecov upload](#optional-codecov-upload)
+- [How to open a PR with these changes](#how-to-open-a-pr-with-these-changes)
+- [Contributing](#contributing)
+- [License](#license)
+- [Acknowledgments](#acknowledgments)
+- [Project Structure](#project-structure)
 <!-- end-doc-gen -->
 
 ## Running locally
