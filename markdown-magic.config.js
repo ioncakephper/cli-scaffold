@@ -27,7 +27,7 @@ module.exports = {
    * - npmDownloads: npm downloads (weekly)
    * - version: package.json version (custom badge)
    * - license: package license
-   * - actions: GitHub Actions workflow status (assumes `ci.yml`)
+   * - actions: GitHub Actions workflow status (uses `ciWorkflow` and `ciBranch` options or package.json fields, defaults to `ci.yml` and `main`)
    * - codecov: codecov coverage badge (branch: main)
    * - release: latest GitHub release
    * - maintained: commit-activity (yearly)
@@ -52,20 +52,22 @@ module.exports = {
    *   <summary> when collapsing.
    * - collapseVisible: number (default 3) — how many badges are shown
    *   before collapsing the rest.
+   * - ciWorkflow: string (optional) — GitHub Actions workflow file name. Uses value from options or package.json, defaults to 'ci.yml'.
+   * - ciBranch: string (optional) — GitHub Actions branch name. Uses value from options or package.json, defaults to 'main'.
    *
    * Example usage in README.md:
-   * <!-- doc-gen BADGES style=for-the-badge collapse=true collapseLabel="More metrics" collapseVisible=4 -->
+   * <!-- doc-gen BADGES style=for-the-badge collapse=true collapseLabel="More metrics" collapseVisible=4 ciWorkflow="build.yml" ciBranch="develop" -->
    *
    * Notes:
    * - Repository parsing supports both string and { url } forms in package.json
    *   (e.g. "git+https://github.com/owner/repo.git" or { "type": "git", "url": "..." }).
-   * - `actions` badge assumes a workflow file named `ci.yml` on branch `main`.
-   *   If your workflow or branch differs, consider adding configuration fields
-   *   to package.json (e.g. `ciWorkflow`, `ciBranch`) and modifying the transform.
+   * - The `actions` badge uses the workflow file and branch specified by the `ciWorkflow` and `ciBranch` options or package.json fields, falling back to `ci.yml` and `main` if not provided.
    */
   BADGES: ({ transform, options, settings = {} }) => {
       const defaultOptions = {
         style: null,
+        ciWorkflow: "ci.yml",
+        ciBranch: "main",
       };
       const globalOptions =
         (settings.transformDefaults && settings.transformDefaults[transform]) ||
@@ -137,14 +139,18 @@ module.exports = {
         const owner = parts[0];
         const repoName = parts[1];
 
+        // Get workflow file and branch from package.json or options, fallback to defaults
+        const ciWorkflow = opts.ciWorkflow || pkg.ciWorkflow || "ci.yml";
+        const ciBranch = opts.ciBranch || pkg.ciBranch || "main";
+
         pushBadge(
           "actions",
-          `[![actions status](https://img.shields.io/github/actions/workflow/status/${owner}/${repoName}/ci.yml?branch=main${styleAmp})](https://github.com/${ownerRepo}/actions)`
+          `[![actions status](https://img.shields.io/github/actions/workflow/status/${owner}/${repoName}/${ciWorkflow}?branch=${ciBranch}${styleAmp})](https://github.com/${ownerRepo}/actions)`
         );
 
         pushBadge(
           "codecov",
-          `[![codecov](https://img.shields.io/codecov/c/github/${owner}/${repoName}?branch=main${styleAmp})](https://codecov.io/gh/${ownerRepo})`
+          `[![codecov](https://img.shields.io/codecov/c/github/${owner}/${repoName}?branch=${ciBranch}${styleAmp})](https://codecov.io/gh/${ownerRepo})`
         );
 
         pushBadge(

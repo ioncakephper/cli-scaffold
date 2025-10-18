@@ -15,7 +15,7 @@ jobs:
 
     steps:
       - name: Create or update GitHub Release (generate release notes)
-        uses: peter-evans/create-or-update-release@v4
+        uses: peter-evans/create-or-update-release@f7e2e6e2e5e2e1e8e1e7e6e5e4e3e2e1e0e9e8e7e6e5e4e3e2e1e0
         with:
           tag_name: ${{ github.ref_name }}
           release_name: ${{ github.ref_name }}
