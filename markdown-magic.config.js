@@ -138,19 +138,16 @@ module.exports = {
         const parts = ownerRepo.split("/");
         const owner = parts[0];
         const repoName = parts[1];
-
-        // Get workflow file and branch from package.json or options, fallback to defaults
-        const ciWorkflow = opts.ciWorkflow || pkg.ciWorkflow || "ci.yml";
-        const ciBranch = opts.ciBranch || pkg.ciBranch || "main";
-
+        const workflowFile = opts.ciWorkflow ?? pkg.ciWorkflow ?? "ci.yml";
+        const workflowBranch = opts.ciBranch ?? pkg.ciBranch ?? "main";
         pushBadge(
           "actions",
-          `[![actions status](https://img.shields.io/github/actions/workflow/status/${owner}/${repoName}/${ciWorkflow}?branch=${ciBranch}${styleAmp})](https://github.com/${ownerRepo}/actions)`
+          `[![actions status](https://img.shields.io/github/actions/workflow/status/${owner}/${repoName}/${workflowFile}?branch=${workflowBranch}${styleAmp})](https://github.com/${ownerRepo}/actions)`
         );
 
         pushBadge(
           "codecov",
-          `[![codecov](https://img.shields.io/codecov/c/github/${owner}/${repoName}?branch=${ciBranch}${styleAmp})](https://codecov.io/gh/${ownerRepo})`
+          `[![codecov](https://img.shields.io/codecov/c/github/${owner}/${repoName}?branch=${workflowBranch}${styleAmp})](https://codecov.io/gh/${ownerRepo})`
         );
 
         pushBadge(
