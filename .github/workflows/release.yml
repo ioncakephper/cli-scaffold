@@ -1,0 +1,47 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  release:
+    name: Create Release and Update Changelog
+    runs-on: ubuntu-latest
+    permissions:
+      # Needed to create the release
+      contents: write
+      # Needed to create a PR to update the changelog
+      pull-requests: write
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          # Fetch all history for all tags and branches
+          fetch-depth: 0
+
+      - name: Generate Changelog
+        id: changelog
+        uses: TriPSs/conventional-changelog-action@v5
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          output-file: "CHANGELOG.md"
+          tag-prefix: "v"
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          body: ${{ steps.changelog.outputs.changelog }}
+          fail_on_unmatched_files: true
+
+      - name: Create Pull Request with updated Changelog
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: "docs(changelog): update CHANGELOG.md for ${{ github.ref_name }}"
+          title: "Update CHANGELOG.md for ${{ github.ref_name }}"
+          body: "This PR updates CHANGELOG.md with the latest changes."
+          branch: "changelog-update-${{ github.ref_name }}"
+          base: main
