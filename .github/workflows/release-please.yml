@@ -1,0 +1,64 @@
+# This workflow automates the process of creating releases, updating the CHANGELOG,
+# and publishing the package to npm using release-please.
+
+name: Release
+
+on:
+  push:
+    # Trigger on push to the primary branch (usually 'main' or 'master')
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  release-please:
+    runs-on: ubuntu-latest
+    permissions:
+      # Required for creating releases and pushing changes to the repository
+      contents: write
+      # Required for managing pull requests (Crucial for creating the release PR)
+      pull-requests: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # 1. Run the release-please action
+      # Using the recommended 'googleapis/release-please-action'
+      - name: Run Release Please
+        uses: googleapis/release-please-action@v4
+        id: release
+        with:
+          release-type: node
+          target-branch: main
+          # Passing the GITHUB_TOKEN via the 'token' input for maximum reliability
+          # in creating Pull Requests (resolves the permission error).
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      # --- Conditional Publishing Steps ---
+      # 2. These steps only run IF a new release was successfully created (did_release is true)
+
+      - name: Set up Node.js for publishing
+        if: ${{ steps.release.outputs.did_release }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20.x'
+          always-auth: true
+          # Configure npm authentication using the provided token secret
+          registry-url: 'https://registry.npmjs.org'
+
+      - name: Install dependencies and run scripts
+        if: ${{ steps.release.outputs.did_release }}
+        run: |
+          echo "New release created: Publishing version ${{ steps.release.outputs.version }}"
+          # Use npm ci for clean and fast dependency installation in CI environments
+          npm ci
+          # Run the prep script to ensure final code documentation generated, formatting and linting is applied
+          npm run prep
+
+      # - name: NPM Publish
+      #   if: ${{ steps.release.outputs.did_release }}
+      #   run: npm publish --access public
+      #   env:
+      #     # This secret is used by npm to authenticate the publish operation
+      #     NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

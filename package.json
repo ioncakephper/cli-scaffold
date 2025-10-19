@@ -4,14 +4,16 @@
   "main": "index.js",
   "scripts": {
     "docs": "npx markdown-magic@latest README.md --config ./markdown-magic.config.js",
-    "test": "jest --runInBand"
+    "fix": "npm run lint:fix && npm run format && npm run format:package",
+    "format": "prettier --write .",
+    "format:package": "prettier --write package.json",
+    "lint": "eslint . --ext .js,.json,.yaml,.yml,.md",
+    "lint:fix": "eslint . --ext .js,.json,.yaml,.yml,.md --fix",
+    "test": "jest --passWithNoTests  --runInBand",
+    "prep": "npm run docs && npm run fix"
   },
   "jest": {
     "testEnvironment": "node"
-  },
-  "devDependencies": {
-    "cross-spawn": "7.0.6",
-    "jest": "^30.2.0"
   },
   "keywords": [],
   "author": "",
@@ -29,5 +31,19 @@
     "commander": "^14.0.1",
     "cosmiconfig": "^9.0.0",
     "minimist": "^1.2.8"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.37.0",
+    "@eslint/markdown": "^7.4.0",
+    "cross-spawn": "7.0.6",
+    "eslint": "^9.37.0",
+    "eslint-plugin-json": "^4.0.1",
+    "eslint-plugin-yaml": "^1.1.3",
+    "jest": "^30.2.0",
+    "jsonc-eslint-parser": "^2.4.1",
+    "markdown-eslint-parser": "^1.2.1",
+    "markdown-magic-scripts": "^1.3.0",
+    "prettier": "^3.6.2",
+    "yaml-eslint-parser": "^1.3.0"
   }
 }

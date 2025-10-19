@@ -3,6 +3,7 @@
 Small CLI scaffold used for examples and tests.
 
 <!-- doc-gen BADGES style=for-the-badge collapse=true collapseLabel="More badges" collapseVisible=4 -->
+
 [![npm version](https://img.shields.io/npm/v/cli-scaffold.svg?style=for-the-badge)](https://www.npmjs.com/package/cli-scaffold) [![actions status](https://img.shields.io/github/actions/workflow/status/ioncakephper/cli-scaffold/ci.yml?branch=main&style=for-the-badge)](https://github.com/ioncakephper/cli-scaffold/actions) ![license](https://img.shields.io/badge/license-MIT-blue.svg?style=for-the-badge) [![maintained](https://img.shields.io/github/commit-activity/y/ioncakephper/cli-scaffold?style=for-the-badge)](https://github.com/ioncakephper/cli-scaffold/graphs/commit-activity)
 
 <details>
@@ -16,6 +17,7 @@ Small CLI scaffold used for examples and tests.
 ## Table of Contents
 
 <!-- doc-gen TOC -->
+
 - [Running locally](#running-locally)
 - [Running tests (Jest)](#running-tests-jest)
 - [CI (GitHub Actions)](#ci-github-actions)
@@ -91,7 +93,6 @@ Then open a PR from the branch in the repository UI.
 
 If you want, I can prepare a patch or branch here for you to push.
 
-
 ## Contributing
 
 See `CONTRIBUTING.md` for details on how to raise issues, propose changes, and submit pull requests. In short:
@@ -99,11 +100,9 @@ See `CONTRIBUTING.md` for details on how to raise issues, propose changes, and s
 - Open issues for bugs or feature requests with clear reproduction steps.
 - For code contributions, fork the repo, create a branch, add tests, and open a PR against `main`.
 
-
 ## License
 
 This project is licensed under the terms of the MIT License. See the `LICENSE` file for details.
-
 
 ## Acknowledgments
 
@@ -116,10 +115,10 @@ Thanks to the following projects and tools used in this repository:
 - markdown-magic — docs automation for README generation
 - cross-spawn — cross-platform process spawning for tests
 
-
 ## Project Structure
 
 <!-- doc-gen fileTree -->
+
 ```
 └── cli-scaffold/
     ├── bin/
@@ -156,7 +155,10 @@ Thanks to the following projects and tools used in this repository:
     │   ├── config-flag.js
     │   ├── debug-quiet-flags.js
     │   └── help-hello.js
+    ├── .prettierrc.json
+    ├── CHANGELOG.md
     ├── CONTRIBUTING.md
+    ├── eslint.config.mjs
     ├── LICENSE
     ├── markdown-magic.config.js
     ├── package-lock.json
@@ -164,4 +166,5 @@ Thanks to the following projects and tools used in this repository:
     ├── README.md
     └── RULES_OF_CONDUCT.md
 ```
+
 <!-- end-doc-gen -->

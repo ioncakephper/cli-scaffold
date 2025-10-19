@@ -6,9 +6,14 @@ const cliPath = path.join(__dirname, '..', 'bin', 'cli.js');
 
 // Create a temporary config file with known values
 const tmpConfigPath = path.join(__dirname, 'tmp.config.js');
-fs.writeFileSync(tmpConfigPath, 'module.exports = { hello: { name: "ConfigName", title: "Dr." } };');
+fs.writeFileSync(
+  tmpConfigPath,
+  'module.exports = { hello: { name: "ConfigName", title: "Dr." } };',
+);
 
-const result = spawnSync(process.execPath, [cliPath, 'ConfigName'], { encoding: 'utf8' });
+const result = spawnSync(process.execPath, [cliPath, 'ConfigName'], {
+  encoding: 'utf8',
+});
 if (result.error) {
   console.error('Failed to run CLI:', result.error);
   fs.unlinkSync(tmpConfigPath);
@@ -16,7 +21,11 @@ if (result.error) {
 }
 
 // Run with explicit --config path
-const resultWithConfig = spawnSync(process.execPath, [cliPath, '--config', tmpConfigPath, 'hello'], { encoding: 'utf8' });
+const resultWithConfig = spawnSync(
+  process.execPath,
+  [cliPath, '--config', tmpConfigPath, 'hello'],
+  { encoding: 'utf8' },
+);
 
 const out = (resultWithConfig.stdout || '') + (resultWithConfig.stderr || '');
 

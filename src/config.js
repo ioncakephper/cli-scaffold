@@ -1,5 +1,5 @@
-const fs = require("fs");
-const path = require("path");
+const fs = require('fs');
+const path = require('path');
 
 function loadConfig(explorer, cliOptions = {}) {
   let config = {};
@@ -9,11 +9,13 @@ function loadConfig(explorer, cliOptions = {}) {
     const maybeJSON = cliOptions.config.trim();
 
     // If it looks like JSON, parse it
-    if (maybeJSON.startsWith("{")) {
+    if (maybeJSON.startsWith('{')) {
       try {
         config = JSON.parse(maybeJSON);
-      } catch (err) {
-        console.error("Invalid JSON passed to --config");
+      } catch (_err) {
+        console.error('Invalid JSON passed to --config');
+        console.error(_err.message);
+
         process.exit(1);
       }
     } else {
@@ -21,13 +23,16 @@ function loadConfig(explorer, cliOptions = {}) {
       const configPath = path.resolve(process.cwd(), maybeJSON);
       if (!fs.existsSync(configPath)) {
         console.error(`Config file not found: ${configPath}`);
+
         process.exit(1);
       }
       try {
         config = require(configPath);
-      } catch (err) {
+      } catch (_err) {
         console.error(`Failed to load config file: ${configPath}`);
-        console.error(err.message);
+
+        console.error(_err.message);
+
         process.exit(1);
       }
     }
@@ -40,9 +45,9 @@ function loadConfig(explorer, cliOptions = {}) {
       // 3. Fallback to default.config.js if present
       const defaultConfigPath = path.join(
         __dirname,
-        "..",
-        "config",
-        "default.config.js"
+        '..',
+        'config',
+        'default.config.js',
       );
       if (fs.existsSync(defaultConfigPath)) {
         config = require(defaultConfigPath);
