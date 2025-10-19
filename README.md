@@ -18,15 +18,17 @@ Small CLI scaffold used for examples and tests.
 
 <!-- doc-gen TOC -->
 
-- [Running locally](#running-locally)
-- [Running tests (Jest)](#running-tests-jest)
-- [CI (GitHub Actions)](#ci-github-actions)
-  - [Optional Codecov upload](#optional-codecov-upload)
-- [How to open a PR with these changes](#how-to-open-a-pr-with-these-changes)
-- [Project Structure](#project-structure)
-- [Contributing](#contributing)
-- [License](#license)
-- [Acknowledgments](#acknowledgments)
+- [cli-scaffold](#cli-scaffold)
+  - [Table of Contents](#table-of-contents)
+  - [Running locally](#running-locally)
+  - [Running tests (Jest)](#running-tests-jest)
+  - [CI (GitHub Actions)](#ci-github-actions)
+    - [Optional Codecov upload](#optional-codecov-upload)
+  - [How to open a PR with these changes](#how-to-open-a-pr-with-these-changes)
+  - [Project Structure](#project-structure)
+  - [Contributing](#contributing)
+  - [License](#license)
+  - [Acknowledgments](#acknowledgments)
 <!-- end-doc-gen -->
 
 ## Running locally
@@ -149,14 +151,14 @@ If you want, I can prepare a patch or branch here for you to push.
 
 ## Contributing
 
-See `CONTRIBUTING.md` for details on how to raise issues, propose changes, and submit pull requests. In short:
+See [`CONTRIBUTING.md`](CONTRIBUTING.md) for details on how to raise issues, propose changes, and submit pull requests. In short:
 
 - Open issues for bugs or feature requests with clear reproduction steps.
 - For code contributions, fork the repo, create a branch, add tests, and open a PR against `main`.
 
 ## License
 
-This project is licensed under the terms of the MIT License. See the `LICENSE` file for details.
+This project is licensed under the terms of the MIT License. See the [`LICENSE`](LICENSE) file for details.
 
 ## Acknowledgments
 
