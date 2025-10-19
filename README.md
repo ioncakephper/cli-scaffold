@@ -9,7 +9,7 @@ Small CLI scaffold used for examples and tests.
 <details>
 <summary>More badges</summary>
 
-[![npm downloads](https://img.shields.io/npm/dw/cli-scaffold.svg?style=for-the-badge)](https://www.npmjs.com/package/cli-scaffold) ![version](https://img.shields.io/badge/version-1.1.0-blue.svg?style=for-the-badge) [![codecov](https://img.shields.io/codecov/c/github/ioncakephper/cli-scaffold?branch=main&style=for-the-badge)](https://codecov.io/gh/ioncakephper/cli-scaffold) [![release](https://img.shields.io/github/v/release/ioncakephper/cli-scaffold?style=for-the-badge)](https://github.com/ioncakephper/cli-scaffold/releases) [![stars](https://img.shields.io/github/stars/ioncakephper/cli-scaffold?style=for-the-badge)](https://github.com/ioncakephper/cli-scaffold/stargazers) [![forks](https://img.shields.io/github/forks/ioncakephper/cli-scaffold?style=for-the-badge)](https://github.com/ioncakephper/cli-scaffold/network/members) [![watchers](https://img.shields.io/github/watchers/ioncakephper/cli-scaffold?style=for-the-badge)](https://github.com/ioncakephper/cli-scaffold/watchers) [![last commit](https://img.shields.io/github/last-commit/ioncakephper/cli-scaffold?style=for-the-badge)](https://github.com/ioncakephper/cli-scaffold/commits) [![contributors](https://img.shields.io/github/contributors/ioncakephper/cli-scaffold?style=for-the-badge)](https://github.com/ioncakephper/cli-scaffold/graphs/contributors) [![issues](https://img.shields.io/github/issues/ioncakephper/cli-scaffold?style=for-the-badge)](https://github.com/ioncakephper/cli-scaffold/issues) [![pull requests](https://img.shields.io/github/issues-pr/ioncakephper/cli-scaffold?style=for-the-badge)](https://github.com/ioncakephper/cli-scaffold/pulls) [![repo size](https://img.shields.io/github/repo-size/ioncakephper/cli-scaffold?style=for-the-badge)](https://github.com/ioncakephper/cli-scaffold) [![top language](https://img.shields.io/github/languages/top/ioncakephper/cli-scaffold?style=for-the-badge)](https://github.com/ioncakephper/cli-scaffold) [![languages](https://img.shields.io/github/languages/count/ioncakephper/cli-scaffold?style=for-the-badge)](https://github.com/ioncakephper/cli-scaffold/search?l=)
+[![npm downloads](https://img.shields.io/npm/dw/cli-scaffold.svg?style=for-the-badge)](https://www.npmjs.com/package/cli-scaffold) ![version](https://img.shields.io/badge/version-1.2.0-blue.svg?style=for-the-badge) [![codecov](https://img.shields.io/codecov/c/github/ioncakephper/cli-scaffold?branch=main&style=for-the-badge)](https://codecov.io/gh/ioncakephper/cli-scaffold) [![release](https://img.shields.io/github/v/release/ioncakephper/cli-scaffold?style=for-the-badge)](https://github.com/ioncakephper/cli-scaffold/releases) [![stars](https://img.shields.io/github/stars/ioncakephper/cli-scaffold?style=for-the-badge)](https://github.com/ioncakephper/cli-scaffold/stargazers) [![forks](https://img.shields.io/github/forks/ioncakephper/cli-scaffold?style=for-the-badge)](https://github.com/ioncakephper/cli-scaffold/network/members) [![watchers](https://img.shields.io/github/watchers/ioncakephper/cli-scaffold?style=for-the-badge)](https://github.com/ioncakephper/cli-scaffold/watchers) [![last commit](https://img.shields.io/github/last-commit/ioncakephper/cli-scaffold?style=for-the-badge)](https://github.com/ioncakephper/cli-scaffold/commits) [![contributors](https://img.shields.io/github/contributors/ioncakephper/cli-scaffold?style=for-the-badge)](https://github.com/ioncakephper/cli-scaffold/graphs/contributors) [![issues](https://img.shields.io/github/issues/ioncakephper/cli-scaffold?style=for-the-badge)](https://github.com/ioncakephper/cli-scaffold/issues) [![pull requests](https://img.shields.io/github/issues-pr/ioncakephper/cli-scaffold?style=for-the-badge)](https://github.com/ioncakephper/cli-scaffold/pulls) [![repo size](https://img.shields.io/github/repo-size/ioncakephper/cli-scaffold?style=for-the-badge)](https://github.com/ioncakephper/cli-scaffold) [![top language](https://img.shields.io/github/languages/top/ioncakephper/cli-scaffold?style=for-the-badge)](https://github.com/ioncakephper/cli-scaffold) [![languages](https://img.shields.io/github/languages/count/ioncakephper/cli-scaffold?style=for-the-badge)](https://github.com/ioncakephper/cli-scaffold/search?l=)
 
 </details>
 <!-- end-doc-gen -->
@@ -18,17 +18,15 @@ Small CLI scaffold used for examples and tests.
 
 <!-- doc-gen TOC -->
 
-- [cli-scaffold](#cli-scaffold)
-  - [Table of Contents](#table-of-contents)
-  - [Running locally](#running-locally)
-  - [Running tests (Jest)](#running-tests-jest)
-  - [CI (GitHub Actions)](#ci-github-actions)
-    - [Optional Codecov upload](#optional-codecov-upload)
-  - [How to open a PR with these changes](#how-to-open-a-pr-with-these-changes)
-  - [Project Structure](#project-structure)
-  - [Contributing](#contributing)
-  - [License](#license)
-  - [Acknowledgments](#acknowledgments)
+- [Running locally](#running-locally)
+- [Running tests (Jest)](#running-tests-jest)
+- [CI (GitHub Actions)](#ci-github-actions)
+  - [Optional Codecov upload](#optional-codecov-upload)
+- [How to open a PR with these changes](#how-to-open-a-pr-with-these-changes)
+- [Project Structure](#project-structure)
+- [Contributing](#contributing)
+- [License](#license)
+- [Acknowledgments](#acknowledgments)
 <!-- end-doc-gen -->
 
 ## Running locally
