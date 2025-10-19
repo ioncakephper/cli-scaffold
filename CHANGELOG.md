@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.0](https://github.com/ioncakephper/cli-scaffold/compare/v1.0.0...v1.1.0) (2025-10-19)
+
+
+### Features
+
+* **lint-format:** Add ESLint flat config and Prettier ([f07097e](https://github.com/ioncakephper/cli-scaffold/commit/f07097eb4642b6d40961394ee604fb7f5ea45d69))
+
 ## 1.0.0 (2025-10-18)
 
 ### Features
