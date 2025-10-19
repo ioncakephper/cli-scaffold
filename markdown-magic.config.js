@@ -45,18 +45,19 @@ module.exports = {
       const highlightImportant = finalOptions.highlightImportant === true;
 
       // read repo package.json
-      let repoPkg;
       const cwd = process.cwd();
       const pkgPath = path.join(cwd, 'package.json');
-      if (!require('fs').existsSync(pkgPath))
+      let pkg;
+      try {
+        pkg = JSON.parse(await fs.readFile(pkgPath, 'utf8'));
+      } catch (e) {
         return `<!-- ${transformName}: could not read package.json -->`;
-      const pkg = require(pkgPath);
-      repoPkg = pkg;
+      }
 
       const deps = Object.assign(
         {},
-        repoPkg.dependencies || {},
-        includeDev ? repoPkg.devDependencies || {} : {},
+        pkg.dependencies || {},
+        includeDev ? pkg.devDependencies || {} : {},
       );
 
       let names = Object.keys(deps).sort((a, b) =>
