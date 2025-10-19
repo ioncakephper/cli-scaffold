@@ -1,5 +1,15 @@
 # Changelog
 
+## [1.2.0](https://github.com/ioncakephper/cli-scaffold/compare/v1.1.0...v1.2.0) (2025-10-19)
+
+
+### Features
+
+* **docs:** Add dynamic dependency listing and reorder sections in README ([5f8edb7](https://github.com/ioncakephper/cli-scaffold/commit/5f8edb7182fe882cc71d1a41c03a6cd6ec72bd24))
+* **docs:** Add dynamic dependency listing and reorder sections in README ([d52474a](https://github.com/ioncakephper/cli-scaffold/commit/d52474adf447473a4a3254e0c94b789130a9f58b))
+* **docs:** Automate Acknowledgments section generation ([0e7634e](https://github.com/ioncakephper/cli-scaffold/commit/0e7634e3569d15c54af35c6ffdd6b25102110979))
+* **docs:** Automate Acknowledgments section generation ([f687ef7](https://github.com/ioncakephper/cli-scaffold/commit/f687ef70b791e8b1b0b0e9eb69c0ff93509c9f5d))
+
 ## [1.1.0](https://github.com/ioncakephper/cli-scaffold/compare/v1.0.0...v1.1.0) (2025-10-19)
 
 ### Features
