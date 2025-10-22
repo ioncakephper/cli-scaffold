@@ -3,7 +3,6 @@
 Small CLI scaffold used for examples and tests.
 
 <!-- doc-gen BADGES style=for-the-badge collapse=true collapseLabel="More badges" collapseVisible=4 -->
-
 [![npm version](https://img.shields.io/npm/v/cli-scaffold.svg?style=for-the-badge)](https://www.npmjs.com/package/cli-scaffold) [![actions status](https://img.shields.io/github/actions/workflow/status/ioncakephper/cli-scaffold/ci.yml?branch=main&style=for-the-badge)](https://github.com/ioncakephper/cli-scaffold/actions) [![license](https://img.shields.io/badge/license-MIT-blue.svg?style=for-the-badge)](https://www.npmjs.com/package/cli-scaffold) [![maintained](https://img.shields.io/github/commit-activity/y/ioncakephper/cli-scaffold?style=for-the-badge)](https://github.com/ioncakephper/cli-scaffold/graphs/commit-activity)
 
 <details>
@@ -17,7 +16,6 @@ Small CLI scaffold used for examples and tests.
 ## Table of Contents
 
 <!-- doc-gen TOC -->
-
 - [Running locally](#running-locally)
 - [Running tests (Jest)](#running-tests-jest)
 - [CI (GitHub Actions)](#ci-github-actions)
@@ -96,7 +94,6 @@ If you want, I can prepare a patch or branch here for you to push.
 ## Project Structure
 
 <!-- doc-gen fileTree -->
-
 ```
 └── cli-scaffold/
     ├── bin/
@@ -144,7 +141,6 @@ If you want, I can prepare a patch or branch here for you to push.
     ├── README.md
     └── RULES_OF_CONDUCT.md
 ```
-
 <!-- end-doc-gen -->
 
 ## Contributing
@@ -163,7 +159,6 @@ This project is licensed under the terms of the MIT License. See the [`LICENSE`]
 Thanks to the following projects and tools used in this repository:
 
 <!-- doc-gen ACKNOWLEDGMENTS -->
-
 - [@eslint/js](https://www.npmjs.com/package/%40eslint%2Fjs) — ESLint JavaScript language implementation
 - [@eslint/markdown](https://www.npmjs.com/package/%40eslint%2Fmarkdown) — The official ESLint language plugin for Markdown
 - [commander](https://www.npmjs.com/package/commander) — the complete solution for node.js command-line programs
